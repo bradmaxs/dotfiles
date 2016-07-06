@@ -7,8 +7,8 @@
 ##############################################################################################################
 ###  backup old machine's key items
 
-mkdir -p ~/migration/home
-cd ~/migration
+mkdir -p migration/home
+cd migration
 
 # what is worth reinstalling?
 brew leaves      		> brew-list.txt    # all top-level brew installs
@@ -21,29 +21,29 @@ npm list -g --depth=0 	> npm-g-list.txt
 
 # let's hold on to these
 
-cp ~/.extra ~/migration/home
-cp ~/.z ~/migration/home
+cp ~/.extra migration/home
+cp ~/.z migration/home
 
-cp -R ~/.ssh ~/migration/home
-cp -R ~/.gnupg ~/migration/home
+cp -R ~/.ssh migration/home
+cp -R ~/.gnupg migration/home
 
-cp /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist ~/migration  # wifi
+cp /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist migration  # wifi
 
-cp ~/Library/Preferences/net.limechat.LimeChat.plist ~/migration
-cp ~/Library/Preferences/com.tinyspeck.slackmacgap.plist ~/migration
+cp ~/Library/Preferences/net.limechat.LimeChat.plist migration
+cp ~/Library/Preferences/com.tinyspeck.slackmacgap.plist migration
 
-cp -R ~/Library/Services ~/migration # automator stuff
+cp -R ~/Library/Services migration # automator stuff
 
-cp -R ~/Documents ~/migration
+cp -R ~/Documents migration
 
-cp ~/.bash_history ~/migration # back it up for fun?
+cp ~/.bash_history migration # back it up for fun?
 
-cp ~/.gitconfig.local ~/migration
+cp ~/.gitconfig.local migration
 
-cp ~/.z ~/migration # z history file.
+cp ~/.z migration # z history file.
 
 # sublime text settings
-cp "~/Library/Application Support/Sublime Text 3/Packages" ~/migration
+cp "~/Library/Application Support/Sublime Text 3/Packages" migration
 
 
 # iTerm settings.
@@ -142,14 +142,14 @@ npm install --global trash-cli
 
 
 # github.com/rupa/z   - oh how i love you
-git clone https://github.com/rupa/z.git ~/code/z
+git clone https://github.com/rupa/z.git ~/Code/z
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z is hooked up in .bash_profile
 
 
 # github.com/thebitguru/play-button-itunes-patch
 # disable itunes opening on media keys
-git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-button-itunes-patch
+# git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-button-itunes-patch
 
 
 # my magic photobooth symlink -> dropbox. I love it.
@@ -197,7 +197,7 @@ ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/su
 
 # set up osx defaults
 #   maybe something else in here https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
-sh .osx
+# sh .osx
 
 # setup and run Rescuetime!
 
